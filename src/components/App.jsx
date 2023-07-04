@@ -26,7 +26,8 @@ class App extends Component {
   onAddContacts = newContact => {
     this.state.contacts.map(item => {
       if (item.name === newContact.name) {
-        return alert(`${newContact.name} is already in contact list`);
+        alert(`${newContact.name} is already in contact list`);
+        return item.name;
       }
     });
 
