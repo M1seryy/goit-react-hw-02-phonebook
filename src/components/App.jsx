@@ -16,7 +16,7 @@ class App extends Component {
   onFilterHandler = e => {
     const newArr = this.state.contacts.filter(item => {
       if (e.target.value === '') {
-        return;
+        return e.target.value;
       } else {
         return item.name.toLowerCase().includes(e.target.value);
       }
@@ -26,7 +26,7 @@ class App extends Component {
   onAddContacts = newContact => {
     this.state.contacts.map(item => {
       if (item.name === newContact.name) {
-        alert(`${newContact.name} is already in contact list`);
+        return alert(`${newContact.name} is already in contact list`);
       }
     });
 
