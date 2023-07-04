@@ -24,17 +24,18 @@ class App extends Component {
     this.setState({ filter: newArr });
   };
 
-onCheckDublicate = (obj) =>{
- return this.state.contacts.map(item => {
-    if (item.name === obj.name) {
-      alert(`${obj.name} is already in contact list`);
-    }
-  });
-}
+  onCheckDublicate = obj => {
+    this.state.contacts.map(item => {
+      if (item.name === obj.name) {
+        alert(`${obj.name} is already in contact list`);
+      }
+      return item.name;
+    });
+  };
 
   onAddContacts = newContact => {
-  this.onCheckDublicate(newContact)
-    
+    this.onCheckDublicate(newContact);
+
     this.setState(({ contacts }) => ({
       contacts: [...contacts, newContact],
     }));
