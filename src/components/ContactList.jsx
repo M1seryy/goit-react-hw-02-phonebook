@@ -8,7 +8,7 @@ class ContactList extends Component {
   render() {
     return (
       <ul>
-        {this.props.filter == ''
+        {this.props.filter === ''
           ? this.props.contacts.map(item => {
               return (
                 <li key={nanoid()}>

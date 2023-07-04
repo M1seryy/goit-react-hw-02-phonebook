@@ -32,7 +32,6 @@ class App extends Component {
 
     this.setState(({ contacts }) => ({
       contacts: [...contacts, newContact],
-     
     }));
   };
 
