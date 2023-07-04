@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-
-import Typography from '@mui/material/Typography';
 import ContactForm from './ContactForm';
 import Filter from './Filter';
 import ContactList from './ContactList';
@@ -19,7 +15,7 @@ class App extends Component {
   };
   onFilterHandler = e => {
     const newArr = this.state.contacts.filter(item => {
-      if (e.target.value == '') {
+      if (e.target.value === '') {
         return;
       } else {
         return item.name.toLowerCase().includes(e.target.value);
@@ -29,7 +25,7 @@ class App extends Component {
   };
   onAddContacts = newContact => {
     this.state.contacts.map(item => {
-      if (item.name == newContact.name) {
+      if (item.name === newContact.name) {
         alert(`${newContact.name} is already in contact list`);
       }
     });
@@ -41,7 +37,7 @@ class App extends Component {
   };
 
   onDeleteItem = id => {
-    const filteredArr = this.state.contacts.filter(item => item.id != id);
+    const filteredArr = this.state.contacts.filter(item => item.id !== id);
     this.setState({
       contacts: filteredArr,
     });
