@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'; 
 
-class Filter extends Component {
-  render() {
-    return (
-      <>
-        <input onChange={this.props.onFilter} type="text" />
-      </>
-    );
-  }
-}
+const Filter = ({ onFilter }) => {
+  return (
+    <>
+      <input onChange={onFilter} type="text" />
+    </>
+  );
+};
 
 export default Filter;
+
+Filter.propTypes = {
+  onFilter: PropTypes.func.isRequired,
+};

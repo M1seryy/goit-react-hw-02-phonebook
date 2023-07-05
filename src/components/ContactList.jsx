@@ -3,6 +3,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Button from '@mui/material/Button';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 class ContactList extends Component {
   render() {
@@ -43,3 +44,8 @@ class ContactList extends Component {
 }
 
 export default ContactList;
+ContactList.propTypes = {
+  onFilter: PropTypes.func.isRequired,
+  contacts: PropTypes.array.isRequired,
+  filter: PropTypes.string.isRequired,
+};

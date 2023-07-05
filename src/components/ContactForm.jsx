@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 class ContactForm extends Component {
@@ -17,9 +18,9 @@ class ContactForm extends Component {
     };
     this.props.onAdd(contact);
     this.setState({
-        name: '',
-        number: '',
-    })
+      name: '',
+      number: '',
+    });
   };
 
   onHandleChange = e => {
@@ -79,5 +80,8 @@ class ContactForm extends Component {
     );
   }
 }
+ContactForm.propTypes = {
+  onAdd: PropTypes.func.isRequired,
+};
 
 export default ContactForm;
