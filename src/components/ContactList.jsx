@@ -9,7 +9,7 @@ class ContactList extends Component {
   render() {
     return (
       <ul>
-        {this.props.filter === ''
+        {this.props.filter == ''
           ? this.props.contacts.map(item => {
               return (
                 <li key={nanoid()}>
@@ -44,8 +44,9 @@ class ContactList extends Component {
 }
 
 export default ContactList;
+
 ContactList.propTypes = {
   onFilter: PropTypes.func.isRequired,
-  contacts: PropTypes.array.isRequired,
+  contacts: PropTypes.string.isRequired,
   filter: PropTypes.string.isRequired,
 };

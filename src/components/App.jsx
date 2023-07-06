@@ -21,6 +21,7 @@ class App extends Component {
         return item.name.toLowerCase().includes(e.target.value);
       }
     });
+
     this.setState({ filter: newArr });
   };
 
