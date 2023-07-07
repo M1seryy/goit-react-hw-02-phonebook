@@ -35,11 +35,13 @@ class App extends Component {
   };
 
   onAddContacts = newContact => {
-    this.onCheckDublicate(newContact);
+    if (newContact.name !== '' && newContact.number !== '') {
+      this.onCheckDublicate(newContact);
 
-    this.setState(({ contacts }) => ({
-      contacts: [...contacts, newContact],
-    }));
+      this.setState(({ contacts }) => ({
+        contacts: [...contacts, newContact],
+      }));
+    }
   };
 
   onDeleteItem = id => {
